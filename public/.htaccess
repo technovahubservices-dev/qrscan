@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /test/
+
+# Serve files and folders directly when they exist.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Fall back to the React app for everything else under /test.
+RewriteRule ^ index.html [L]

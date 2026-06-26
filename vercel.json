@@ -4,15 +4,11 @@
   "rewrites": [
     {
       "source": "/test",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
-      "source": "/test/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/test/(.*)",
-      "destination": "/$1"
+      "source": "/test/:path*",
+      "destination": "/:path*"
     }
   ]
 }
