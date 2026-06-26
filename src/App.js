@@ -1,36 +1,69 @@
-import { useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const targetUrl = 'https://i.ibb.co/9mjXBFs9/Chat-GPT-Image-Jun-26-2026-02-57-13-PM.png';
+  const imageUrl =
+    'https://i.ibb.co/9mjXBFs9/Chat-GPT-Image-Jun-26-2026-02-57-13-PM.png';
+  const isImageView =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('view') === 'image';
+  const basePath =
+    typeof window !== 'undefined'
+      ? window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : `${window.location.pathname}/`
+      : '/';
+  const qrTarget =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${basePath}?view=image`
+      : '';
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      window.location.replace(targetUrl);
-    }, 1200);
+  if (isImageView) {
+    return (
+      <main className="scan-page">
+        <section className="scan-card image-view" aria-label="Image page">
+          <div className="scan-copy">
+            <p className="eyebrow">Image view</p>
+            <h1>Here is the image</h1>
+            <p className="lead">
+              This page opens after scanning the QR code.
+            </p>
+          </div>
 
-    return () => window.clearTimeout(timer);
-  }, []);
+          <div className="image-frame">
+            <img src={imageUrl} alt="Opened image" className="menu-image" />
+          </div>
+
+          <footer className="powered-by">
+            <span>Powered by</span>
+            <a href="https://www.technovahub.in">TechnovaHub</a>
+          </footer>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="scan-page">
-      <section className="scan-card" aria-label="QR redirect page">
+      <section className="scan-card" aria-label="QR landing page">
         <div className="scan-copy">
           <p className="eyebrow">Scan QR</p>
-          <h1>Opening the image</h1>
+          <h1>Scan to open the image</h1>
           <p className="lead">
-            You will be redirected to the image link shortly.
+            Point your phone camera at the QR code below. It will open the
+            image page with TechnovaHub branding.
           </p>
         </div>
 
-        <a
-          className="primary-link"
-          href={targetUrl}
-          rel="noreferrer"
-          target="_blank"
-        >
-          Open image now
-        </a>
+        <div className="qr-frame" aria-label="QR code">
+          <img
+            src={`https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=16&data=${encodeURIComponent(
+              qrTarget
+            )}`}
+            alt="QR code that opens the image page"
+            className="qr-image"
+          />
+          <p className="qr-caption">Scan me to view the image</p>
+        </div>
 
         <footer className="powered-by">
           <span>Powered by</span>
