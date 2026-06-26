@@ -30,7 +30,7 @@ function App() {
           </div>
 
           <div className="image-frame">
-            <img src={imageUrl} alt="Opened image" className="menu-image" />
+            <img src={imageUrl} alt="Opened content" className="menu-image" />
           </div>
 
           <footer className="powered-by">
@@ -59,7 +59,7 @@ function App() {
             src={`https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=16&data=${encodeURIComponent(
               qrTarget
             )}`}
-            alt="QR code that opens the image page"
+            alt="QR code to open the page"
             className="qr-image"
           />
           <p className="qr-caption">Scan me to view the image</p>
