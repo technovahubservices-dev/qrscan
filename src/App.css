@@ -1,0 +1,130 @@
+.scan-page {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(238, 194, 142, 0.35), transparent 42%),
+    linear-gradient(180deg, #fbf4ea 0%, #f1e2cf 100%);
+}
+
+.scan-card {
+  width: min(1180px, 100%);
+  background: rgba(255, 250, 243, 0.86);
+  border: 1px solid rgba(147, 98, 32, 0.18);
+  box-shadow: 0 20px 60px rgba(84, 51, 16, 0.14);
+  border-radius: 28px;
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+
+.menu-view {
+  width: min(1060px, 100%);
+}
+
+.scan-copy {
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #a06a24;
+}
+
+.scan-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  color: #3f2410;
+}
+
+.lead {
+  margin: 0 auto;
+  max-width: 58ch;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #6e5137;
+}
+
+.menu-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(62, 34, 14, 0.08), rgba(62, 34, 14, 0));
+  border: 1px solid rgba(147, 98, 32, 0.18);
+}
+
+.qr-frame {
+  justify-self: center;
+  width: min(420px, 100%);
+  padding: 18px;
+  border-radius: 26px;
+  border: 1px solid rgba(147, 98, 32, 0.18);
+  background: linear-gradient(180deg, #fffaf3 0%, #f5e7d1 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.qr-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+.qr-caption {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6e5137;
+  text-align: center;
+}
+
+.menu-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.powered-by {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  padding-top: 2px;
+  font-size: 0.95rem;
+  color: #6c4c2d;
+}
+
+.powered-by a {
+  color: #3f2410;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.powered-by a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .scan-page {
+    padding: 12px;
+  }
+
+  .scan-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+}
