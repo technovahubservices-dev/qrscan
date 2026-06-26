@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/test_saleam_biriyani",
-      "destination": "https://qrscan-lovat.vercel.app/test_saleam_biriyani"
+      "destination": "/index.html"
     },
     {
       "source": "/test_saleam_biriyani/:path*",
-      "destination": "https://qrscan-lovat.vercel.app/test_saleam_biriyani/:path*"
+      "destination": "/:path*"
     }
   ]
 }
