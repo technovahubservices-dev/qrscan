@@ -1,12 +1,20 @@
 import './App.css';
 
 function App() {
+  const baseUrl =
+    typeof window !== 'undefined'
+      ? new URL('.', window.location.href).pathname
+      : '/';
   const isMenuView =
     typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('view') === 'menu';
   const menuUrl =
     typeof window !== 'undefined'
-      ? `${window.location.origin}/?view=menu`
+      ? `${window.location.origin}${baseUrl}?view=menu`
+      : '';
+  const menuImageUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${baseUrl}menu-image.png`
       : '';
 
   if (isMenuView) {
@@ -22,11 +30,11 @@ function App() {
           </div>
 
           <div className="menu-frame">
-            <img
-              src="/menu-image.png"
-              alt="Restaurant menu"
-              className="menu-image"
-            />
+          <img
+            src={menuImageUrl}
+            alt="Restaurant menu"
+            className="menu-image"
+          />
           </div>
 
           <footer className="powered-by">
