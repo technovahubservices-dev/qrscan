@@ -30,11 +30,11 @@ function App() {
           </div>
 
           <div className="menu-frame">
-          <img
-            src={menuImageUrl}
-            alt="Restaurant menu"
-            className="menu-image"
-          />
+            <img
+              src={menuImageUrl}
+              alt="Restaurant menu"
+              className="menu-image"
+            />
           </div>
 
           <footer className="powered-by">
