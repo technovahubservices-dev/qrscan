@@ -3,12 +3,12 @@
   "outputDirectory": "build",
   "rewrites": [
     {
-      "source": "/test",
-      "destination": "/"
+      "source": "/test_saleam_biriyani",
+      "destination": "https://qrscan-lovat.vercel.app/test_saleam_biriyani"
     },
     {
-      "source": "/test/:path*",
-      "destination": "/:path*"
+      "source": "/test_saleam_biriyani/:path*",
+      "destination": "https://qrscan-lovat.vercel.app/test_saleam_biriyani/:path*"
     }
   ]
 }
