@@ -3,19 +3,11 @@ import './App.css';
 function App() {
   const imageUrl =
     'https://i.ibb.co/9mjXBFs9/Chat-GPT-Image-Jun-26-2026-02-57-13-PM.png';
+  const qrPageUrl =
+    'https://qrscan-lovat.vercel.app/test_saleam_biriyani/?view=image';
   const isImageView =
     typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('view') === 'image';
-  const basePath =
-    typeof window !== 'undefined'
-      ? window.location.pathname.endsWith('/')
-        ? window.location.pathname
-        : `${window.location.pathname}/`
-      : '/';
-  const qrTarget =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}${basePath}?view=image`
-      : '';
 
   if (isImageView) {
     return (
@@ -57,7 +49,7 @@ function App() {
         <div className="qr-frame" aria-label="QR code">
           <img
             src={`https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=16&data=${encodeURIComponent(
-              qrTarget
+              qrPageUrl
             )}`}
             alt="QR code to open the page"
             className="qr-image"
