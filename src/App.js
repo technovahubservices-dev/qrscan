@@ -1,20 +1,22 @@
 import './App.css';
 
 function App() {
-  const baseUrl =
+  const basePath =
     typeof window !== 'undefined'
-      ? new URL('.', window.location.href).pathname
+      ? window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : `${window.location.pathname}/`
       : '/';
   const isMenuView =
     typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('view') === 'menu';
   const menuUrl =
     typeof window !== 'undefined'
-      ? `${window.location.origin}${baseUrl}?view=menu`
+      ? `${window.location.origin}${basePath}?view=menu`
       : '';
   const menuImageUrl =
     typeof window !== 'undefined'
-      ? `${window.location.origin}${baseUrl}menu-image.png`
+      ? `${window.location.origin}${basePath}menu-image.png`
       : '';
 
   if (isMenuView) {
