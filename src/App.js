@@ -42,7 +42,7 @@ function App() {
           <h1>Scan to open the image</h1>
           <p className="lead">
             Point your phone camera at the QR code below. It will open the
-            image page with TechnovaHub branding.
+            image.
           </p>
         </div>
 
